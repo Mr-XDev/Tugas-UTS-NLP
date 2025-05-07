@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Topik</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --background-color: #f4f4f4;
+            --font-color: #333;
+            --score-color: #555;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--background-color);
+            color: var(--font-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            font-size: 16px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+        .keyword-list {
+            margin-top: 20px;
+        }
+
+        .keyword-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 12px;
+            border-bottom: 1px solid #eee;
+            font-size: 15px;
+        }
+
+        .keyword-item:last-child {
+            border-bottom: none;
+        }
+
+        .keyword-word {
+            font-weight: 500;
+        }
+
+        .keyword-score {
+            color: var(--score-color);
+        }
+
+        .nav-links {
+            margin-top: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent-color);
+            margin-right: 15px;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .keyword-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2px;
+            }
+        }
+=======
+    <title>Detail Topik {{ topic_id + 1 }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            padding: 5px 0;
+        }
+        .back {
+            text-align: center;
+            margin-top: 20px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Ringkasan: Topik {{ topic_id + 1 }}</h1>
+        <h2>Metode: {{ method }}</h2>
+        <p>Berikut adalah daftar kata kunci untuk topik ini beserta skornya:</p>
+
+        <div class="keyword-list">
+            {% for word, score in words %}
+                <div class="keyword-item">
+                    <div class="keyword-word">{{ word }}</div>
+                    <div class="keyword-score">Skor: {{ "%.6f"|format(score) }}</div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('results') }}">← Kembali ke Daftar Topik</a>
+            <a href="{{ url_for('index') }}">🏠 Halaman Utama</a>
+        </div>
+</body>
+</html>
