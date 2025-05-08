@@ -42,7 +42,7 @@ topic_analysis/
 
 1. **Clone atau unduh repository project**:
     ```bash
-    git clone https://github.com/username/repository-name.git
+    git clone git clone https://github.com/Mr-XDev/Tugas-UTS-NLP.git
     ```
 
 2. **Install dependencies menggunakan pip**:
