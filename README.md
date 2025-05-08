@@ -59,6 +59,12 @@ topic_analysis/
     ```
     http://127.0.0.1:5000/
     ```
+![image](https://github.com/user-attachments/assets/1adfb345-ecf1-430b-a3a6-7b975ebeecb6)
+
+![image](https://github.com/user-attachments/assets/cd2c7fd7-d63a-456b-a729-ba893b7c04c2)
+
+![image](https://github.com/user-attachments/assets/9c227f09-9603-4738-bad7-e8c4c08a5c4b)
+
 
 ---
 
